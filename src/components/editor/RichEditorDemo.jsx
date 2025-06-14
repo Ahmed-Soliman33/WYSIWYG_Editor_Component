@@ -39,6 +39,7 @@ export default function RichEditorDemo() {
             onChange={setSpellCheckEnabled}
             className="ml-4"
             size="sm"
+            data-testid="switch-button"
           />
         </div>
         <div className="flex justify-end gap-4">
@@ -47,6 +48,7 @@ export default function RichEditorDemo() {
             onClick={saveContent}
             className="mt-4 rounded-md"
             disabled={isSaving}
+            data-testid="save"
           >
             {isSaving ? "Saving..." : "Save"}
           </Button>
@@ -55,6 +57,7 @@ export default function RichEditorDemo() {
             onClick={loadContent}
             className="mt-4 rounded-md"
             disabled={isSaving}
+            data-testid="load content"
           >
             Load Content
           </Button>

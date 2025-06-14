@@ -1,4 +1,5 @@
 const StyleButton = ({ onToggle, style, label, active }) => {
+  // Handle toggle event
   const handleToggle = (e) => {
     e.preventDefault();
     onToggle(style);

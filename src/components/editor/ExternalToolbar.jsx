@@ -12,10 +12,16 @@ const BLOCK_STYLE_BUTTONS = [
   { label: "OL", style: "ordered-list-item" },
 ];
 
-const RenderToolbar = ({ editorState, toggleInlineStyle, toggleBlockType }) => {
+const RenderToolbar = ({
+  editorState,
+  toggleInlineStyle,
+  toggleBlockStyle,
+}) => {
+  // Get the current inline style
   const currentInlineStyle = editorState.getCurrentInlineStyle();
 
-  const currentBlockType = editorState
+  // Get the current block Style
+  const currentBlockStyle = editorState
     .getCurrentContent()
     .getBlockForKey(editorState.getSelection().getStartKey())
     .getType();
@@ -34,9 +40,9 @@ const RenderToolbar = ({ editorState, toggleInlineStyle, toggleBlockType }) => {
       {BLOCK_STYLE_BUTTONS.map((type) => (
         <StyleButton
           key={type.label}
-          active={currentBlockType === type.style}
+          active={currentBlockStyle === type.style}
           label={type.label}
-          onToggle={toggleBlockType}
+          onToggle={toggleBlockStyle}
           style={type.style}
         />
       ))}

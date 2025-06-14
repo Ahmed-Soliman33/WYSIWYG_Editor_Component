@@ -6,6 +6,7 @@ const SwitchButton = ({
   disabled = false,
   className = "",
   size = "lg",
+  ...props
 }) => {
   const handleToggle = useCallback(() => {
     if (!disabled && onChange) {
@@ -20,7 +21,7 @@ const SwitchButton = ({
   };
 
   return (
-    <div className={`flex items-center gap-2 ${className}`}>
+    <div {...props} className={`flex items-center gap-2 ${className}`}>
       <label className="relative inline-flex cursor-pointer items-center">
         <input
           type="checkbox"

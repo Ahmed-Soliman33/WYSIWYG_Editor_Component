@@ -8,10 +8,12 @@ import SwitchButton from "@/components/ui/SwitchButton";
 const DemoPage = () => {
   const [controlledMode, setControlledMode] = useState(false);
 
+  // Editor state management
   const [editorState, setEditorState] = useState(() =>
     EditorState.createEmpty(),
   );
 
+  // Handle editor state changes
   const handleEditorChange = useCallback((newEditorState) => {
     setEditorState(newEditorState);
   }, []);
@@ -36,10 +38,12 @@ const DemoPage = () => {
               Toggle to switch between controlled and uncontrolled modes
             </span>
           </div>
+          {/* Toggle Button for Switching Controlled/Uncontrolled Mode */}
           <SwitchButton
             label="Controlled Mode"
             onChange={setControlledMode}
             checked={controlledMode}
+            data-testid="switch-button"
           />
         </div>
       </section>
@@ -60,6 +64,9 @@ const DemoPage = () => {
           </svg>
           Example {controlledMode ? "Controlled" : "Uncontrolled"} Mode
         </h2>
+
+        {/* Rich Editor Component with External Toolbar */}
+        {/* Controlled/Uncontrolled Mode depends on the `value` and `onChange` props if it is passed  */}
         <RichEditor
           placeholder={`${controlledMode ? "Controlled" : "Uncontrolled"} Mode...`}
           renderToolbar={ExternalToolbar}

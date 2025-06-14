@@ -24,7 +24,7 @@ const RichEditor = forwardRef(
       onChangeHandler,
       handleKeyCommand,
       toggleInlineStyle,
-      toggleBlockType,
+      toggleBlockStyle,
     } = useRichEditor({ value, onChange });
 
     const editorRef = useRef(null);
@@ -35,8 +35,9 @@ const RichEditor = forwardRef(
         editorRef.current.focus();
       }
     }, []);
+    focusEditor();
 
-    // To expose the focusEditor.
+    // To expose the focusEditor to handle if ref is passed from outside
     useImperativeHandle(ref, () => ({
       focus: focusEditor,
       blur: () => {
@@ -58,18 +59,27 @@ const RichEditor = forwardRef(
     const toolbarProps = {
       editorState,
       toggleInlineStyle,
-      toggleBlockType,
+      toggleBlockStyle,
     };
 
     return (
-      <div className="mx-auto w-full p-4" style={style}>
+      <div
+        data-testid="rich-editor"
+        className="mx-auto w-full p-4"
+        style={style}
+      >
+        {/* Render (external toolbar or default toolbar) */}
         {RenderToolbar ? (
           <RenderToolbar {...toolbarProps} />
         ) : (
           <DefaultToolbar {...toolbarProps} />
         )}
 
-        <div className={editorClassName} onClick={focusEditor}>
+        <div
+          className={editorClassName}
+          onClick={focusEditor}
+          data-testid="editor-container"
+        >
           <Editor
             editorState={editorState}
             handleKeyCommand={handleKeyCommand}
