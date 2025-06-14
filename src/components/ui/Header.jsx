@@ -60,7 +60,10 @@ const Header = () => {
         </ul>
         <Button
           onClick={() => {
-            window.open("https://github.com/", "_blank");
+            window.open(
+              "https://github.com/Ahmed-Soliman33/WYSIWYG_Editor_Component",
+              "_blank",
+            );
           }}
           className="w-full rounded-3xl lg:w-auto"
           size="md"

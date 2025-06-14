@@ -1,7 +1,7 @@
 export const LINKS = [
   {
     label: "Docs",
-    href: "#",
+    href: "https://github.com/Ahmed-Soliman33/WYSIWYG_Editor_Component/blob/master/README.md",
     target: "_blank",
   },
   {
