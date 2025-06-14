@@ -49,6 +49,7 @@ src/
 │   ├── DemoPage.test.js           # Tests for the demo page
 │   ├── useRichEditor.test.js      # Hook test
 │   └── useEditorFakeApi.test.js   # Hook test
+│   └── DefaultToolbar.test.jsx    # Tests Editor Operations Like(bold, italic,underline)
 
 ```
 
