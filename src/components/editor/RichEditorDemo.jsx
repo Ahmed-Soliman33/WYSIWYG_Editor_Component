@@ -31,7 +31,7 @@ export default function RichEditorDemo() {
         />
       </div>
 
-      <div className="flex justify-between">
+      <div className="flex flex-col md:flex-row md:justify-between">
         <div className="flex items-center">
           <span>Spell Check</span>
           <SwitchButton
@@ -42,8 +42,9 @@ export default function RichEditorDemo() {
             data-testid="switch-button"
           />
         </div>
-        <div className="flex justify-end gap-4">
+        <div className="flex gap-4 md:justify-end">
           <Button
+            size="md"
             variant="primary"
             onClick={saveContent}
             className="mt-4 rounded-md"
@@ -53,6 +54,7 @@ export default function RichEditorDemo() {
             {isSaving ? "Saving..." : "Save"}
           </Button>
           <Button
+            size="md"
             variant="secondary"
             onClick={loadContent}
             className="mt-4 rounded-md"

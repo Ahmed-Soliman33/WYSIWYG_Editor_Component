@@ -20,7 +20,7 @@ const Button = ({
 
   const sizeStyles = {
     sm: "px-3 py-1.5 text-sm",
-    md: "px-[1.1rem] py-2 text-base",
+    md: "px-2 py-2 sm:px-[1.1rem] sm:py-2 text-[.9rem] sm:text-base ",
     lg: "px-6 py-3 text-lg",
   };
 

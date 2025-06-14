@@ -74,7 +74,7 @@ npm run dev
 
 ---
 
-## The demo page is available at
+### The demo page is available at
 
 ```bash
 http://localhost:5173
@@ -98,11 +98,9 @@ npm test
   - API mocking via custom hook
   - Component rendering
 
-### Usage Examples
+# Usage Examples
 
----
-
-# Controlled Mode
+## Controlled Mode
 
 ```jsx
 <RichEditor
@@ -115,7 +113,7 @@ npm test
 
 ---
 
-# Uncontrolled Mode
+## Uncontrolled Mode
 
 ```jsx
 <RichEditor renderToolbar={DefaultToolbar} placeholder="Uncontrolled mode." />
