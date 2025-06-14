@@ -9,7 +9,7 @@ export function useEditorFakeApi(initialText = "", delay = 2000) {
   const [isLoading, setIsLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
 
-  // change text function
+  // Fake change text function
   const changeText = function (text) {
     const content = ContentState.createFromText(text);
     const newState = EditorState.createWithContent(content);
@@ -46,6 +46,5 @@ export function useEditorFakeApi(initialText = "", delay = 2000) {
     isSaving,
     loadContent,
     saveContent,
-    changeText,
   };
 }

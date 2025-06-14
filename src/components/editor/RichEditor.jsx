@@ -35,7 +35,6 @@ const RichEditor = forwardRef(
         editorRef.current.focus();
       }
     }, []);
-    focusEditor();
 
     // To expose the focusEditor to handle if ref is passed from outside
     useImperativeHandle(ref, () => ({

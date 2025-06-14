@@ -20,7 +20,7 @@ export function useRichEditor({ value, onChange }) {
     [setEditorState],
   );
 
-  // Handle key commands (e.g., shortcuts like ctrl+b for bold)
+  // Handle key commands (e.g., shortcuts like ctrl+b for bold and ctrl+u for underline and etc.)
   const handleKeyCommand = useCallback(
     (command, state) => {
       const newState = RichUtils.handleKeyCommand(state, command);
@@ -41,7 +41,6 @@ export function useRichEditor({ value, onChange }) {
     [editorState, onChangeHandler],
   );
 
-  // Toggle block style
   const toggleBlockStyle = useCallback(
     (blockType) => {
       onChangeHandler(RichUtils.toggleBlockType(editorState, blockType));
